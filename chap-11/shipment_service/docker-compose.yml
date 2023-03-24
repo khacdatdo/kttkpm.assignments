@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  shipment_service:
+    container_name: shipment_service
+    image: thayquedeptrai/shipment_service:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"

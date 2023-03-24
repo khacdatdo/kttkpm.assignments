@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  user_service_db:
+    container_name: user_service_db
+    image: postgres:15.2-bullseye
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=abcd1234
+      - POSTGRES_DB=thayqueoi_db
+
+  user_service:
+    container_name: user_service
+    image: thayquedeptrai/user_service:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8000"
+    environment:
+      - DB_HOST=user_service_db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASS=abcd1234
+      - DB_NAME=thayqueoi_db

@@ -1,0 +1,31 @@
+## select query
+
+from product_model.models import product_details as pd
+prodata = pd.objects.all()
+for tbl_value in prodata.values():
+	print("Value of our table: ",tbl_value)
+
+
+
+### Insert query
+
+from product_model.models import product_details as pd
+
+prodata = pd(product_id = "MB001", product_category = "mobile accessories", product_name = "power bank", availability = "available", price = "500")
+prodata.save()
+
+prodata = pd(product_id = "MBPH001", product_category = "mobile phone", product_name = "One Plus 7T", availability = "available", price = "40000")
+prodata.save()
+
+prodata = pd(product_id = "CLT001", product_category = "men clothing", product_name = "US Polo T-shirt", availability = "available", price = "800")
+prodata.save()
+
+prodata = pd(product_id = "TOY001", product_category = "Children toys", product_name = "Teddy bear", availability = "available", price = "1500")
+prodata.save()
+
+prodata = pd(product_id = "FUN001", product_category = "Furniture", product_name = "Sofa set", availability = "available", price = "25000")
+prodata.save()
+
+prodata = pd(product_id = "MBPH002", product_category = "mobile phone", product_name = "MI-7Pro", availability = "not available", price = "18000")
+prodata.save()
+
