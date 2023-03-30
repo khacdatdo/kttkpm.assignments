@@ -5,7 +5,7 @@ services:
     container_name: payment_service
     image: thayquedeptrai/payment_service:latest
     build:
-      context: .
+      context: ./payment_service
       dockerfile: Dockerfile
     ports:
       - "8001:8000"
@@ -23,7 +23,7 @@ services:
     container_name: product_service
     image: thayquedeptrai/product_service:latest
     build:
-      context: .
+      context: ./product_service
       dockerfile: Dockerfile
     ports:
       - "8004:8000"
@@ -38,7 +38,7 @@ services:
     container_name: shipment_service
     image: thayquedeptrai/shipment_service:latest
     build:
-      context: .
+      context: ./shipment_service
       dockerfile: Dockerfile
     ports:
       - "8002:8000"
@@ -56,7 +56,7 @@ services:
     container_name: user_service
     image: thayquedeptrai/user_service:latest
     build:
-      context: .
+      context: ./user_service
       dockerfile: Dockerfile
     ports:
       - "8003:8000"
